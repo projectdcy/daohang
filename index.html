@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>小韩的导航网</title>
+    <meta name="keywords" content="博客网,博客导航,导航填写,导航引导">
+    <meta name="description" content="小韩的导航网,博客导航,网络技术导航,学习导航,汇聚所有网络学习的导航,全国最大的技术性导航网,学习技术就到小韩的导航网">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.9.2/theme-chalk/index.css">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <div id="vvhan_com">
+        <el-main>
+            <div class="title">
+                <h2>韩小韩的导航网</h2>
+            </div>
+            <el-row :gutter="20">
+                <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" v-for="hansData in urlDatas">
+                    <el-card shadow="hover" class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>{{hansData.title}}</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">
+                                <a :href="'http://'+hansData.url" target="_blank">Open Link</a>
+                            </el-button>
+                        </div>
+                        <div class="text item">
+                            {{hansData.content}}
+                        </div>
+                    </el-card>
+                </el-col>
+            </el-row>
+            <div class="el-backtop" style="right: 40px; bottom: 40px;" v-on:click="webTop(0)"><i
+                    class="el-icon-caret-top"></i></div>
+            <div class="footer">
+                <p>{{webInfo.copyRight}}</p>
+                <p><a href="http://www.beian.miit.gov.cn/" target="_blank">{{webInfo.icpText}}</a></p>
+            </div>
+        </el-main>
+    </div>
+
+    <script src="https://cdn.staticfile.org/vue/2.6.1/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/element-ui/2.9.2/index.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.1.0/axios.min.js"></script>
+    <script src="static/index.js"></script>
+</body>
+
+</html>
